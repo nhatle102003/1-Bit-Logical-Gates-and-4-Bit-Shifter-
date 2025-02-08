@@ -1,0 +1,22 @@
+$date
+	Thu Feb 06 23:46:52 2025
+$end
+$version
+	GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+$end
+$timescale
+	1ns
+$end
+$scope module notgate_test $end
+$var wire 1 " A $end
+$var wire 1 # X $end
+$upscope $end
+$enddefinitions $end
+$dumpvars
+#0
+1#
+0"
+#10
+1"
+0#
+#20

@@ -1,0 +1,46 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_00000207c8a45180 .scope module, "arith_shifter_test" "arith_shifter_test" 2 4;
+ .timescale -9 -9;
+v00000207c8bbbd30_0 .var "A", 0 3;
+v00000207c8bbbdd0_0 .net "X", 0 3, L_00000207c8bbbf10;  1 drivers
+S_00000207c8a45310 .scope module, "uut" "left_shift_arithmtic_circuit_module" 2 10, 3 1 0, S_00000207c8a45180;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 4 "A";
+    .port_info 1 /OUTPUT 4 "X";
+v00000207c8a454a0_0 .net "A", 3 0, v00000207c8bbbd30_0;  1 drivers
+v00000207c8bb6d40_0 .net "X", 3 0, L_00000207c8bbbf10;  alias, 1 drivers
+v00000207c8a45540_0 .net *"_ivl_2", 2 0, L_00000207c8bbbe70;  1 drivers
+L_00000207c8a88018 .functor BUFT 1, C4<0>, C4<0>, C4<0>, C4<0>;
+v00000207c8bbbc90_0 .net *"_ivl_4", 0 0, L_00000207c8a88018;  1 drivers
+L_00000207c8bbbe70 .part v00000207c8bbbd30_0, 0, 3;
+L_00000207c8bbbf10 .concat [ 1 3 0 0], L_00000207c8a88018, L_00000207c8bbbe70;
+    .scope S_00000207c8a45180;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "arith_shifter_test.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars", 32'sb00000000000000000000000000000000, S_00000207c8a45180 {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v00000207c8bbbd30_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 4;
+    %store/vec4 v00000207c8bbbd30_0, 0, 4;
+    %delay 10, 0;
+    %pushi/vec4 10, 0, 4;
+    %store/vec4 v00000207c8bbbd30_0, 0, 4;
+    %delay 10, 0;
+    %vpi_call 2 27 "$display", " Testing arithmetic shifter (shifting left by 1) " {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "arith_shift.v";
+    "./left_shift_arithmtic_circuit_module.v";
