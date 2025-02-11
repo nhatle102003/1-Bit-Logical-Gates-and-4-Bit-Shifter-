@@ -7,6 +7,7 @@ reg [3:0] A;
 
 wire [3:0] X;
 
+integer i;
 left_shift_arithmtic_circuit_module uut (A, X);
 
 initial begin
@@ -14,6 +15,16 @@ initial begin
     $dumpfile ("arith_shifter_test.vcd");// holds output waveform
     $dumpvars (0, arith_shifter_test);
 
+    
+    i = 0;
+    while (i < 16) begin
+        A = i;      // Assign A to the binary value of i
+        #10;        // Wait 10 time units
+        i = i + 1;  // Increment i
+    end
+ 
+
+    /*
     A = 0000;
     #10;
 
@@ -61,7 +72,7 @@ initial begin
 
     A = 1111;
     #10;
-    
+    */
 
     $display (" Testing arithmetic shifter (shifting left by 1) ");
 

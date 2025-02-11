@@ -1,5 +1,5 @@
 $date
-	Fri Feb 07 00:31:47 2025
+	Sat Feb 08 00:15:10 2025
 $end
 $version
 	Icarus Verilog
@@ -8,11 +8,12 @@ $timescale
 	1ns
 $end
 $scope module arith_shifter_test $end
-$var wire 4 ! X [0:3] $end
-$var reg 4 " A [0:3] $end
+$var wire 4 ! X [3:0] $end
+$var reg 4 " A [3:0] $end
+$var integer 32 # i [31:0] $end
 $scope module uut $end
-$var wire 4 # A [3:0] $end
-$var wire 4 $ X [3:0] $end
+$var wire 4 $ A [3:0] $end
+$var wire 4 % X [3:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -21,6 +22,7 @@ $dumpall
 $end
 #0
 $dumpvars
+b0 %
 b0 $
 b0 #
 b0 "
@@ -28,12 +30,93 @@ b0 !
 $end
 #10
 b10 !
-b10 $
+b10 %
 b1 "
+b1 $
 b1 #
 #20
 b100 !
-b100 $
-b1010 "
-b1010 #
+b100 %
+b10 "
+b10 $
+b10 #
 #30
+b110 !
+b110 %
+b11 "
+b11 $
+b11 #
+#40
+b1000 !
+b1000 %
+b100 "
+b100 $
+b100 #
+#50
+b1010 !
+b1010 %
+b101 "
+b101 $
+b101 #
+#60
+b1100 !
+b1100 %
+b110 "
+b110 $
+b110 #
+#70
+b1110 !
+b1110 %
+b111 "
+b111 $
+b111 #
+#80
+b0 !
+b0 %
+b1000 "
+b1000 $
+b1000 #
+#90
+b10 !
+b10 %
+b1001 "
+b1001 $
+b1001 #
+#100
+b100 !
+b100 %
+b1010 "
+b1010 $
+b1010 #
+#110
+b110 !
+b110 %
+b1011 "
+b1011 $
+b1011 #
+#120
+b1000 !
+b1000 %
+b1100 "
+b1100 $
+b1100 #
+#130
+b1010 !
+b1010 %
+b1101 "
+b1101 $
+b1101 #
+#140
+b1100 !
+b1100 %
+b1110 "
+b1110 $
+b1110 #
+#150
+b1110 !
+b1110 %
+b1111 "
+b1111 $
+b1111 #
+#160
+b10000 #
